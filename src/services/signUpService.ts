@@ -4,9 +4,11 @@ interface SignUpResponse {
     message: string;
 }
 
+const API_URL = "https://to-do-list-backend-jobx.onrender.com";
+
 export const SignUpRequest = async (formData: SignUpFormData): Promise<SignUpResponse> => {
     try {
-        const response = await fetch("http://localhost:3000/users/", {
+        const response = await fetch(`http://${API_URL}/users/`, {
             method: "POST",
             headers: {
                 "Content-Type": "Application/json",

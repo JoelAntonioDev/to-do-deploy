@@ -4,13 +4,13 @@ interface LoginResponse {
     token: string;
     email: string;
 }
-
+const API_URL = "https://to-do-list-backend-jobx.onrender.com";
 export const loginRequest = async (
     email: string,
     senha: string
 ): Promise<LoginResponse> => {
     try {
-        const response = await fetch("http://localhost:3000/users/login", {
+        const response = await fetch(`http://${API_URL}/users/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
