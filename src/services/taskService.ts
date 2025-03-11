@@ -23,7 +23,7 @@ interface NovaTarefa {
     status: string
 }
 
-const API_URL = "https://to-do-list-backend-jobx.onrender.com";
+const API_URL = "https://to-do-deploy-back.onrender.com";
 
 // Função para listar as tarefas
 export const listarTarefa = async (): Promise<taskResponse[]> => {

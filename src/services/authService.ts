@@ -4,7 +4,7 @@ interface LoginResponse {
     token: string;
     email: string;
 }
-const API_URL = "https://to-do-list-backend-jobx.onrender.com";
+const API_URL = "https://to-do-deploy-back.onrender.com";
 export const loginRequest = async (
     email: string,
     senha: string
