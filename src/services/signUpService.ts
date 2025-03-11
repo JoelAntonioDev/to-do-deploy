@@ -4,7 +4,7 @@ interface SignUpResponse {
     message: string;
 }
 
-const API_URL = "https://to-do-deploy-back.onrender.com";
+const API_URL = "http://to-do-deploy-back.onrender.com";
 
 export const SignUpRequest = async (formData: SignUpFormData): Promise<SignUpResponse> => {
     try {
