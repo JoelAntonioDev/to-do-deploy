@@ -8,7 +8,7 @@ const API_URL = "http://to-do-deploy-back.onrender.com";
 
 export const SignUpRequest = async (formData: SignUpFormData): Promise<SignUpResponse> => {
     try {
-        const response = await fetch(`http://${API_URL}/users/`, {
+        const response = await fetch(`${API_URL}/users/`, {
             method: "POST",
             headers: {
                 "Content-Type": "Application/json",

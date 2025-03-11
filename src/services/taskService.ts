@@ -30,7 +30,7 @@ export const listarTarefa = async (): Promise<taskResponse[]> => {
     try {
         const token = obterCookie("auth_token");
 
-        const response = await fetch(`http://${API_URL}/tasks/`, {
+        const response = await fetch(`${API_URL}/tasks/`, {
             method: "GET",
             headers: {
                 "Content-Type": "Application/json",
@@ -61,7 +61,7 @@ export const listarArquivosTarefa = async (taskId: number): Promise<Arquivo[]> =
     try {
         const token = obterCookie("auth_token");
 
-        const response = await fetch(`http://${API_URL}/tasks/${taskId}/files`, {
+        const response = await fetch(`${API_URL}/tasks/${taskId}/files`, {
             method: "GET",
             headers: {
                 "Content-Type": "Application/json",
@@ -87,7 +87,7 @@ export const baixarEExibirArquivo = async (fileId: number) => {
     try {
         const token = obterCookie("auth_token");
 
-        const response = await fetch(`http://${API_URL}/tasks/files/${fileId}`, {
+        const response = await fetch(`${API_URL}/tasks/files/${fileId}`, {
             method: "GET",
             headers:{
                 "Content-Type": "Application/json",
@@ -115,7 +115,7 @@ export const eliminarArquivo = async (taskId: number, fileId: number) => {
     try {
         const token = obterCookie("auth_token");
 
-        const response = await fetch(`http://${API_URL}/tasks/${taskId}/files/${fileId}`, {
+        const response = await fetch(`${API_URL}/tasks/${taskId}/files/${fileId}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "Application/json",
@@ -142,7 +142,7 @@ export const eliminarTarefa = async (taskId: number) => {
             await eliminarArquivo(taskId, arquivo.file_id);
         }
 
-        const response = await fetch(`http://${API_URL}/tasks/${taskId}`, {
+        const response = await fetch(`${API_URL}/tasks/${taskId}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "Application/json",
@@ -163,7 +163,7 @@ export const adicionarTarefa = async (tarefa: NovaTarefa) => {
     const token = obterCookie("auth_token");
 
     try {
-        const response = await fetch(`http://${API_URL}/tasks/`, {
+        const response = await fetch(`${API_URL}/tasks/`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -187,7 +187,7 @@ export const adicionarTarefa = async (tarefa: NovaTarefa) => {
 export const atualizarTarefa = async (taskId: number, tarefa: Partial<NovaTarefa>) => {
     const token = obterCookie("auth_token");
 
-    const response = await fetch(`http://${API_URL}/tasks/${taskId}`, {
+    const response = await fetch(`${API_URL}/tasks/${taskId}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -208,7 +208,7 @@ export const uploadArquivo = async (taskId: number, formData: FormData) => {
     const token = obterCookie("auth_token");
 
     try {
-        const response = await fetch(`http://${API_URL}/tasks/${taskId}/upload`, {
+        const response = await fetch(`${API_URL}/tasks/${taskId}/upload`, {
             method: "POST",
             headers: {
                 ...(token && { "Authorization": token }), 
