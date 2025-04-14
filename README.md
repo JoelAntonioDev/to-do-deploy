@@ -10,6 +10,7 @@ Este projeto é a interface de um sistema de gerenciamento de tarefas, desenvolv
     ESLint 
     Lucide React é uma biblioteca de ícones modernos e personalizáveis para React.
 
+Este projecto está acessível em: https://to-do-deploy-two.vercel.app/
 📦 Instalação e Execução
 
 Siga os passos abaixo para rodar o projeto localmente:
